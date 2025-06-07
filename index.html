@@ -1,154 +1,21 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Digitale Pinnwand - Vorschau</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
-
-    body {
-      margin: 0;
-      height: 100vh;
-      background-color: #000;
-      /* Großes Raster mit dünnen Linien */
-      background-image:
-        linear-gradient(rgba(100, 100, 100, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(100, 100, 100, 0.15) 1px, transparent 1px);
-      background-size: 150px 150px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
-      position: relative;
-      color: white;
-    }
-
-    h1 {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
-      font-weight: 700;
-      font-size: 2rem;
-      color: #0af;
-      user-select: none;
-      z-index: 10;
-      text-shadow: 0 0 8px #0af;
-    }
-
-    .pinnwand {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      padding: 60px 0 20px 0;
-    }
-
-    /* Datei-Karten mit frei wählbaren Positionen */
-    .karte {
-      position: absolute;
-      width: 220px;
-      min-height: 90px;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgb(0 0 0 / 0.6);
-      padding: 12px 16px;
-      color: white;
-      font-weight: 600;
-      cursor: default;
-      user-select: none;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      font-size: 0.9rem;
-      line-height: 1.2;
-      text-shadow: 0 0 6px rgba(0,0,0,0.7);
-    }
-
-    .karte .icon {
-      font-size: 2.6rem;
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      text-align: center;
-      line-height: 44px;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgb(0 0 0 / 0.5);
-      user-select: none;
-    }
-
-    .karte-content {
-      flex: 1;
-      overflow-wrap: break-word;
-    }
-
-    /* Farben für Karten */
-    .text-icon {
-      background: #27ae60; /* grün */
-    }
-    .bild-icon {
-      background: #e67e22; /* orange */
-    }
-    .link-icon {
-      background: #2980b9; /* blau */
-    }
-    .video-icon {
-      background: #c0392b; /* rot */
-    }
-    .office-icon {
-      background: #8e44ad; /* lila */
-    }
-    .audio-icon {
-      background: #16a085; /* türkis */
-    }
-
-    /* Thumbnail für Bildkarten */
-    .karte.bild .thumbnail {
-      width: 70px;
-      height: 50px;
-      border-radius: 6px;
-      border: 1.5px solid rgba(255 255 255 / 0.3);
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 0 12px rgb(0 0 0 / 0.7);
-      flex-shrink: 0;
-    }
-
-    .karte a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .karte a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.75rem;
-      color: #666;
-      user-select: none;
-    }
-  </style>
-</head>
+<!-- Ab hier nur der Body-Teil mit den überarbeiteten Karten -->
 <body>
   <h1>Digitale Pinnwand – Vorschau</h1>
 
   <div class="pinnwand">
-    <!-- Frei positionierte Karten -->
+    <!-- Verteiltere, unterschiedlich große und variierte Karten -->
 
-    <div class="karte" style="top: 80px; left: 80px; background: #27ae60cc;">
+    <div class="karte" style="top: 70px; left: 70px; width: 200px; height: auto; background: #27ae60cc;">
       <div class="icon text-icon">📝</div>
-      <div class="karte-content">Notiz: Meeting um 15 Uhr planen</div>
+      <div class="karte-content">Meeting um 15 Uhr planen</div>
     </div>
 
-    <div class="karte" style="top: 50px; left: 350px; background: #2980b9cc;">
+    <div class="karte" style="top: 60px; left: 320px; width: 240px; background: #2980b9cc;">
       <div class="icon link-icon">🔗</div>
       <div class="karte-content"><a href="#">https://example.com/projekt</a></div>
     </div>
 
-    <div class="karte" style="top: 170px; left: 150px; background: #e67e22cc;">
+    <div class="karte bild" style="top: 180px; left: 100px; width: 260px; background: #e67e22cc;">
       <div class="icon bild-icon">🖼️</div>
       <div class="karte-content">
         <div class="thumbnail" style="background-image:url('https://picsum.photos/id/1015/80/50');"></div>
@@ -156,40 +23,52 @@
       </div>
     </div>
 
-    <div class="karte" style="top: 250px; left: 430px; background: #c0392bcc;">
+    <div class="karte" style="top: 260px; left: 450px; width: 210px; background: #c0392bcc;">
       <div class="icon video-icon">🎬</div>
       <div class="karte-content"><a href="#">Produktvideo.mp4</a></div>
     </div>
 
-    <div class="karte" style="top: 320px; left: 80px; background: #8e44adcc;">
+    <div class="karte" style="top: 380px; left: 50px; width: 230px; background: #8e44adcc;">
       <div class="icon office-icon">📄</div>
       <div class="karte-content"><a href="#">Projektplan.xlsx</a></div>
     </div>
 
-    <div class="karte" style="top: 420px; left: 280px; background: #16a085cc;">
+    <div class="karte" style="top: 460px; left: 300px; width: 190px; background: #16a085cc;">
       <div class="icon audio-icon">🎵</div>
       <div class="karte-content"><a href="#">Meeting-Audio.m4a</a></div>
     </div>
 
-    <div class="karte" style="top: 380px; left: 520px; background: #27ae60cc;">
-      <div class="icon text-icon">📝</div>
-      <div class="karte-content">Ideensammlung für neues Feature</div>
+    <!-- Notizzettel-Stil -->
+    <div class="karte" style="top: 180px; left: 600px; width: 160px; background: #f39c12cc; font-size: 0.85rem; line-height: 1.3;">
+      <div class="karte-content">🗒️ Einkaufsliste:<br>- Kaffee<br>- Stifte<br>- Papier</div>
     </div>
 
-    <div class="karte" style="top: 500px; left: 150px; background: #8e44adcc;">
+    <div class="karte" style="top: 330px; left: 580px; width: 260px; background: #2ecc71cc;">
+      <div class="icon text-icon">📝</div>
+      <div class="karte-content">Ideensammlung für neues Feature: Dark Mode, Mobile App, AI-Suche</div>
+    </div>
+
+    <div class="karte" style="top: 510px; left: 180px; width: 230px; background: #8e44adcc;">
       <div class="icon office-icon">📄</div>
       <div class="karte-content"><a href="#">Kundenpräsentation.pptx</a></div>
     </div>
 
-    <div class="karte" style="top: 550px; left: 430px; background: #2980b9cc;">
+    <div class="karte" style="top: 580px; left: 440px; width: 200px; background: #2980b9cc;">
       <div class="icon link-icon">🔗</div>
       <div class="karte-content"><a href="#">https://andere-seite.ch/</a></div>
     </div>
 
+    <!-- Weitere einfache Textnotiz -->
+    <div class="karte" style="top: 640px; left: 80px; width: 180px; background: #d35400cc; font-size: 0.85rem;">
+      <div class="karte-content">🔍 Recherchieren: Kundenfeedback-Tools</div>
+    </div>
+
+    <div class="karte" style="top: 640px; left: 300px; width: 270px; background: #34495ecc;">
+      <div class="karte-content">📌 Erinnerung:<br>Server-Wartung Freitag 22 Uhr – 02 Uhr</div>
+    </div>
   </div>
 
   <footer>
     &copy; 2025 Digitale Pinnwand – Vorschau. Nur eine visuelle Demo.
   </footer>
 </body>
-</html>
